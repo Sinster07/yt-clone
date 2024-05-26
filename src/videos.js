@@ -43,7 +43,7 @@ export const videos = [
   },
   {
     id: 5,
-    url: "https://www.youtube.com/watch?v=LHtdMDhqQXo",
+    url: "https://www.youtube.com/watch?v=6eGCi4SVy94",
     thumbnail:
       "	https://i.ytimg.com/vi/6eGCi4SVy94/hqdefault.jpg?s…RUAAIhCGAE=&rs=AOn4CLCi0DbCnhjB_ql1tOi8DQVlyWDD7w",
     title:
