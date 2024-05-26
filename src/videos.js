@@ -1,7 +1,15 @@
 export const videos = [
   {
-    id: "1",
-    url: "https://www.youtube.com/watch?v=LHtdMDhqQXo",
+    id: 1,
+    url: "https://www.youtube.com/watch?v=WjAPDofGg28",
+    thumbnail:
+      "https://i.ytimg.com/vi/WjAPDofGg28/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB6OM9IVeS6YKkZ_6hbDU3mYRHENg",
+    title: "Deva deva  ",
+    channelTitle: " T- series ",
+  },
+  {
+    id: "2",
+    url: "https://www.youtube.com/watch?v=IxarXjJWV0E",
     thumbnail:
       "https://i.ytimg.com/vi/IxarXjJWV0E/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDnPdZlJsdjxhaQRuEuDUwyAtkYVQ",
     title:
@@ -10,7 +18,7 @@ export const videos = [
   },
   {
     id: 2,
-    url: "https://www.youtube.com/watch?v=LHtdMDhqQXo",
+    url: "https://www.youtube.com/watch?v=WjAPDofGg28",
     thumbnail:
       "https://i.ytimg.com/vi/WjAPDofGg28/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB6OM9IVeS6YKkZ_6hbDU3mYRHENg",
     title: "Deva deva  ",
@@ -18,7 +26,7 @@ export const videos = [
   },
   {
     id: 3,
-    url: "https://www.youtube.com/watch?v=LHtdMDhqQXo",
+    url: "https://www.youtube.com/watch?v=fukKpFbMKZM&t=18s",
     thumbnail:
       "https://i.ytimg.com/vi/fukKpFbMKZM/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBVr1MWxKPcX3kD3mpBRflx3HOlyQ",
     title:
@@ -30,7 +38,7 @@ export const videos = [
     url: "https://www.youtube.com/watch?v=LHtdMDhqQXo",
     thumbnail:
       "https://i.ytimg.com/vi/LHtdMDhqQXo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-OWbgGXctDyeuCSY4NXfpE24ffA",
-    title: "ABC ",
+    title: "Wright Brothers ki Pehli Flight 1905 !! ",
     channelTitle: " Flying beast",
   },
   {
