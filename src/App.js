@@ -12,16 +12,15 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Feed />
+        element: <Feed />,
       },
       {
-
         path: "/watch",
-        element: <Watch />
-      }
-    ]
-  }
-])
+        element: <Watch />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (

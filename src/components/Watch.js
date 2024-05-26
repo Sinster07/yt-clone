@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import API_KEY from "../constant/youtube";
 import axios from "axios";
 import Avatar from "react-avatar";
@@ -11,6 +11,9 @@ import { LuSendHorizonal } from "react-icons/lu";
 import LiveChat from "./LiveChat";
 import { useDispatch } from "react-redux";
 import { setMessage } from "../utils/chatSlice";
+import { videos } from "../videos";
+import VideoCart from "./VideoCart";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Watch = () => {
   const [input, setInput] = useState("");
@@ -18,6 +21,8 @@ const Watch = () => {
   const [searchParams] = useSearchParams();
   const videoId = searchParams.get("v");
   const dispatch = useDispatch();
+  const [videoList, setVideoList] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
 
   const getSingleVideo = async () => {
     try {
@@ -35,17 +40,32 @@ const Watch = () => {
     setInput("");
   };
 
+  const fetchMoreData = () => {
+    if (videoList.length >= videos.length) {
+      setHasMore(false);
+      return;
+    }
+    // Simulate an API call to fetch more data
+    setTimeout(() => {
+      setVideoList((prev) => [
+        ...prev,
+        ...videos.slice(prev.length, prev.length + 7),
+      ]);
+    }, 500);
+  };
+
   useEffect(() => {
     getSingleVideo();
+    setVideoList(videos.slice(0, 7)); // Initialize with the first 7 videos
   }, [videoId]);
 
   return (
     <div className="flex ml-4 w-[100%] mt-2">
-      <div className="flex w-[88%]">
-        <div>
+      <div className="flex w-[100%]">
+        <div className="w-[70%]">
           <iframe
-            width="900"
-            height="500"
+            width="800"
+            height="450"
             src={`https://www.youtube.com/embed/${videoId}?&autoplay=0`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -86,36 +106,25 @@ const Watch = () => {
             </div>
           </div>
         </div>
-        <div className="w-[100%] border border-gray-300 ml-8 rounded-lg h-fit p-4">
-          <div className="flex justify-between items-center">
-            <h1>Top Chat</h1>
-            <BsThreeDotsVertical />
-          </div>
-          <div className="overflow-y-auto h-[28rem] flex flex-col-reverse">
-            <LiveChat />
-          </div>
-
-          <div className="flex items-center justify-between border-t p-2">
-            <div className="flex items-center w-[90%]">
-              <div>
-                <Avatar
-                  src="https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH=w240-h480-rw"
-                  size={35}
-                  round={true}
-                />
-              </div>
-              <input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                className="border-b border-gray-300 outline-none ml-2"
-                type="text"
-                placeholder="Send message..."
-              />
-              <div className="bg-gray-200 cursor-pointer p-2 rounded-full">
-                <LuSendHorizonal onClick={sendMessage} />
-              </div>
+        <div className="w-[30%] border border-gray-300 ml-8 rounded-lg h-fit p-4">
+          <InfiniteScroll
+            dataLength={videoList.length}
+            next={fetchMoreData}
+            hasMore={hasMore}
+            loader={<h4>Loading...</h4>}
+            endMessage={<p style={{ textAlign: "center" }}>No more videos</p>}
+          >
+            <div className="grid grid-cols-1 gap-3">
+              {videoList.map((item) => (
+                <Link
+                  to={`/watch?v=${item.url.split("=").pop()}`}
+                  key={item.id}
+                >
+                  <VideoCart item={item} />
+                </Link>
+              ))}
             </div>
-          </div>
+          </InfiniteScroll>
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ const VideoContainer = () => {
     >
       <div className="grid grid-cols-3 gap-3">
         {currentVideos.map((item) => (
-          <Link to={`/watch?v=${item.id}`} key={item.id}>
+          <Link to={`/watch?v=${item.url.split("=").pop()}`} key={item.id}>
             <VideoCart item={item} />
           </Link>
         ))}

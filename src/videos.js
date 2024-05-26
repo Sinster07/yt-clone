@@ -1,10 +1,11 @@
 export const videos = [
   {
     id: "1",
-    url: "https://youtu.be/LHtdMDhqQXo",
+    url: "https://www.youtube.com/watch?v=LHtdMDhqQXo",
     thumbnail:
-      "https://i.ytimg.com/vi/LHtdMDhqQXo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-OWbgGXctDyeuCSY4NXfpE24ffA",
-    title: "ABC ",
+      "https://i.ytimg.com/vi/IxarXjJWV0E/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDnPdZlJsdjxhaQRuEuDUwyAtkYVQ",
+    title:
+      "15 min mein Poora Paani Upar aa Gaya !! by Flying Beast 275,746 views 11 hours ago 8 minutes, 4 seconds ",
     channelTitle: " Flying beast",
   },
   {

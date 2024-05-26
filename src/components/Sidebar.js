@@ -1,7 +1,11 @@
 import React from "react";
 import { CiHome } from "react-icons/ci";
 import { SiYoutubeshorts } from "react-icons/si";
-import { MdOutlineMusicVideo, MdOutlineSubscriptions } from "react-icons/md";
+import {
+  MdOutlineEmojiPeople,
+  MdOutlineMusicVideo,
+  MdOutlineSubscriptions,
+} from "react-icons/md";
 import { useSelector } from "react-redux";
 
 const sidebarItem = [
@@ -20,6 +24,14 @@ const sidebarItem = [
   {
     icons: <MdOutlineMusicVideo size="24px" />,
     title: "YouTue Music",
+  },
+  {
+    icons: <MdOutlineEmojiPeople size="24px" />,
+    title: "Your Channel",
+  },
+  {
+    icons: <MdOutlineMusicVideo size="24px" />,
+    title: "Your Videos",
   },
 ];
 
